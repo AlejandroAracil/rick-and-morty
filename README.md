@@ -1,4 +1,4 @@
-# rick-and-morty
+# rick-and-morty | rick-and-morty-alex.netlify.app
 
 ## Project setup
 ```

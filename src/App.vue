@@ -1,9 +1,11 @@
 <template>
   <div>
-    <h1>Rick & Morty</h1>
-    <FilterByStatus />
-    <FilterByName />
-    <ListCharacters />
+    <header1 @menu="cambiarMenu" />
+    <div v-if="pageSelected == 1">
+      <FilterByStatus />
+      <FilterByName />
+      <ListCharacters />
+    </div>
     <!-- <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -14,13 +16,25 @@
 import ListCharacters from "@/components/ListCharacters";
 import FilterByStatus from "@/components/FilterByStatus";
 import FilterByName from "@/components/FilterByName";
+import header1 from "@/components/Header.vue";
 export default {
   name: "App",
   components: {
     ListCharacters,
     FilterByStatus,
     FilterByName,
+    header1,
     // HelloWorld,
+  },
+  data() {
+    return {
+      pageSelected: 0,
+    }
+  },
+  methods: {
+    cambiarMenu(page) {
+      this.pageSelected = page;
+    }
   },
 };
 </script>
